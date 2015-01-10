@@ -25,5 +25,21 @@ You may need the following as well if the above RPM install fails, install these
 
 ### Install RAIDMon
 
-     wget https://raw.githubusercontent.com/arjitc/RAIDMon/master/raidmon.sh
-     chmod +x raidmon.sh
+     wget https://raw.githubusercontent.com/arjitc/RAIDMon/master/raidmon.sh -O /bin/raidmon
+     chmod +x /bin/raidmon
+
+----
+
+### RAIDMon usage
+
+#### List all drives
+
+     raidmon listall
+
+#### List RAID recovery progress
+
+      raidmon rebuildstatus
+
+#### List Failed drives
+
+      raidmon listfailed
