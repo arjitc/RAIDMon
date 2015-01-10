@@ -12,6 +12,7 @@ if [ "$ACTION" == listall ]; then
 	physical_drives= $(hpacucli ctrl all show config | grep physicaldrive)
 	if [[ -z "physical_drives" ]] then
 	echo "No Physical drives found"
+	fi
 fi
 if [ "$ACTION" == rebuild status ]; then
 	## RAID rebuild %
@@ -19,6 +20,7 @@ if [ "$ACTION" == rebuild status ]; then
 	echo $rebuild_status
 	if [[ -z "$rebuild_status" ]] then
 	echo "RAID Status OK"
+	fi
 fi
 
 
