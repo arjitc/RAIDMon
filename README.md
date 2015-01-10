@@ -1,5 +1,5 @@
 # RAIDMon
-Linux RAID monitoring bash toolset
+Linux RAID monitoring bash toolset currently supports only HP RAID cards.
 
 ### Install hpacucli
 
