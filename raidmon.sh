@@ -9,7 +9,7 @@ then
 fi
 if [ "$ACTION" == listall ]; then
 	# list all physical drives
-	physical_drives=$(hpacucli ctrl all show config | grep physicaldrive)
+	physical_drives=$(for I in `sudo /usr/sbin/hpacucli ctrl all show | awk '{ print $6 }'`; do sudo /usr/sbin/hpacucli ctrl slot=$I pd all show; done)
 	if [[ -z "$physical_drives" ]]; then
 		echo "No Physical drives found"
 	else
@@ -26,5 +26,14 @@ if [ "$ACTION" == rebuildstatus ]; then
 		echo $rebuild_status
 	fi
 fi
-
+if [ "$ACTION" == listfailed ]; then
+	## RAID rebuild %
+	rebuild_status=$(hpacucli ctrl all show config | grep Failed)
+	echo $rebuild_status
+	if [[ -z "$rebuild_status" ]]; then
+		echo "RAID Status OK"
+	else
+		echo $rebuild_status
+	fi
+fi
 
