@@ -10,9 +10,10 @@ fi
 if [ "$ACTION" == listall ]; then
 	# list all physical drives
 	physical_drives=$(hpacucli ctrl all show config | grep physicaldrive)
-	echo $physical_drives
 	if [[ -z "$physical_drives" ]]; then
-	echo "No Physical drives found"
+		echo "No Physical drives found"
+	else
+		echo \n $physical_drives
 	fi
 fi
 if [ "$ACTION" == rebuildstatus ]; then
@@ -20,7 +21,9 @@ if [ "$ACTION" == rebuildstatus ]; then
 	rebuild_status=$(hpacucli ctrl all show config | grep Recovering | awk {'print $8'})
 	echo $rebuild_status
 	if [[ -z "$rebuild_status" ]]; then
-	echo "RAID Status OK"
+		echo "RAID Status OK"
+	else
+		echo $rebuild_status
 	fi
 fi
 
