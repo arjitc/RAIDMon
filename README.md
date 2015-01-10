@@ -21,6 +21,8 @@ You may need the following as well if the above RPM install fails, install these
 
     yum install glibc.i686 libgcc.i686 libstdc++.i686
 
+----
+
 ### Install RAIDMon
 
      wget https://raw.githubusercontent.com/arjitc/RAIDMon/master/raidmon.sh
