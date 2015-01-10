@@ -10,6 +10,7 @@ fi
 if [ "$ACTION" == listall ]; then
 	# list all physical drives
 	physical_drives=$(hpacucli ctrl all show config | grep physicaldrive)
+	echo $physical_drives
 	if [[ -z "$physical_drives" ]]; then
 	echo "No Physical drives found"
 	fi
