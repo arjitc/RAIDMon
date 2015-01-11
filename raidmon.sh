@@ -1,5 +1,13 @@
 #!/bin/bash
 ACTION=$1
+hpacucli_version=$(hpacucli version)
+
+if [[ -z "$hpacucli_version" ]]
+then
+   echo "Error: hpacucli is not installed"
+   exit
+fi
+
 if [[ -z "$ACTION" ]]
 then
    echo "Error: action is undefined"
