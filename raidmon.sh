@@ -21,7 +21,7 @@ if [ "$ACTION" == listall ]; then
 	if [[ -z "$physical_drives" ]]; then
 		echo "No Physical drives found"
 	else
-		echo \n $physical_drives
+		echo "$physical_drives"
 	fi
 fi
 if [ "$ACTION" == rebuildstatus ]; then
@@ -31,7 +31,7 @@ if [ "$ACTION" == rebuildstatus ]; then
 	if [[ -z "$rebuild_status" ]]; then
 		echo "RAID Status OK"
 	else
-		echo $rebuild_status
+		echo "$rebuild_status"
 	fi
 fi
 if [ "$ACTION" == listfailed ]; then
@@ -41,7 +41,7 @@ if [ "$ACTION" == listfailed ]; then
 	if [[ -z "$rebuild_status" ]]; then
 		echo "NO Failed HDD detected"
 	else
-		echo $rebuild_status
+		echo "$rebuild_status"
 	fi
 fi
 
