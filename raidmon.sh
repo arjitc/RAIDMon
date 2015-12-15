@@ -27,7 +27,6 @@ fi
 if [ "$ACTION" == rebuildstatus ]; then
 	## RAID rebuild %
 	rebuild_status=$(hpacucli ctrl all show config | grep Recovering | awk {'print $8'})
-	echo $rebuild_status
 	if [[ -z "$rebuild_status" ]]; then
 		echo "RAID Status OK"
 	else
