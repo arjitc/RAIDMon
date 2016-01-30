@@ -1,7 +1,9 @@
 # RAIDMon
-Linux RAID monitoring bash toolset currently supports only HP RAID cards.
+Linux RAID monitoring bash toolset currently supports HP, Adaptec and MDADM (Software) RAID.
 
-### Install hpacucli
+### Install hpacucli 
+
+Note: Follow this step ONLY if you have a HP RAID card
 
 #### If on x86_64
 
@@ -31,6 +33,8 @@ You may need the following as well if the above RPM install fails, install these
 ----
 
 ### RAIDMon usage
+
+Usage for software (MDADM) based arrays is a bit different and can be found at MDADM-README.md
 
 #### List all drives
 
