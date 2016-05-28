@@ -1,6 +1,7 @@
 #!/bin/bash
 ACTION=$1
 arcconf_version=$(/usr/StorMan/arcconf version | grep Version | awk '{print $5}')
+#change this to your controller number!
 controller_number=1
 
 if [[ -z "$arcconf_version" ]]
