@@ -25,3 +25,13 @@ if [ "$ACTION" == listall ]; then
 		echo "$physical_drives"
 	fi
 fi
+if [ "$ACTION" == onlinecount ]; then
+	# list all online physical drives
+	online_count=$(/usr/StorMan/arcconf getconfig $controller_number | grep Online | wc -l)
+	if [[ -z "$online_count" ]]; then
+		echo "No Physical drives found online"
+	else
+		echo "$online_count"
+	fi
+fi
+
